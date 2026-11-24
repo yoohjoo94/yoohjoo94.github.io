@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Student Profile</title>
+  <!-- Pretendard 폰트 불러오기 -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    :root {
+      --primary: #1E293B;
+      --accent: #2563EB;
+      --accent-light: #EFF6FF;
+      --sky: #60A5FA;
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Pretendard", -apple-system, sans-serif; }
+    body { background-color: var(--bg); color: var(--primary); line-height: 1.6; letter-spacing: -0.02em; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 100;
+    }
+    .nav-container {
+      max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between;
+      align-items: center; padding: 1.2rem 1.5rem;
+    }
+    .logo { font-weight: 700; font-size: 1.15rem; color: var(--primary); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* Layout Container */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 4.5rem 0; border-bottom: 1px solid var(--border); }
+
+    /* Section Header */
+    .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--primary); display: flex; align-items: center; gap: 0.5rem; }
+    .section-title::before { content: ""; display: inline-block; width: 4px; height: 1.2rem; background: var(--accent); border-radius: 2px; }
+
+    /* Hero Section */
+    .hero { padding: 6rem 0 4.5rem 0; }
+    .hero-badge { display: inline-block; background: var(--accent-light); color: var(--accent); font-weight: 600; font-size: 0.85rem; padding: 0.35rem 0.8rem; border-radius: 20px; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.3; margin-bottom: 1rem; letter-spacing: -0.03em; }
+    .hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin-bottom: 2rem; }
+    .cta-group { display: flex; gap: 0.8rem; }
+    .btn { display: inline-flex; align-items: center; padding: 0.75rem 1.4rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: #1D4ED8; }
+    .btn-secondary { background: var(--surface); color: var(--primary); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: #F1F5F9; }
+
+    /* Grid Layouts */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+
+    /* Cards */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.08); border-color: var(--sky); }
+
+    /* Tags */
+    .tag-group { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+    .tag { background: var(--bg); color: var(--text-muted); font-size: 0.8rem; font-weight: 500; padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid var(--border); }
+
+    /* Footer */
+    footer { padding: 3rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">홍길동<span>.dev</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <span class="hero-badge">Computer Science Student</span>
+      <h1>데이터와 기술로<br>가치를 만드는 <span style="color: var(--accent);">홍길동</span>입니다.</h1>
+      <p>문제 본질 탐구와 정교한 구조 설계를 즐깁니다. 복잡한 문제를 명확한 코드와 직관적인 인터페이스로 해결합니다.</p>
+      <div class="cta-group">
+        <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
+        <a href="#" class="btn btn-secondary">이력서 (PDF)</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.8rem;">학력 및 소속</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            <strong>OO대학교 컴퓨터공학과</strong><br>
+            2021.03 ~ 2026.02 (졸업 예정)<br>
+            학부 연구생 (Data Analysis Lab)
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.8rem;">주요 경력 및 이력</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            • 2026 대학생 SW 해커톤 우수상<br>
+            • OO 알고리즘 학술 동아리 팀장<br>
+            • 정보처리기사 취득 (2025)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">Skills & Tools</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Development</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Python, React, TypeScript, SQL</p>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Data & AI</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Pandas, Scikit-learn, PyTorch</p>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Collaboration</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Git, Figma, Notion, Jira</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">AI 기반 학습 가이드 플랫폼</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+            학생 맞춤형 커리큘럼 추천 시스템. 데이터 전처리 및 프론트엔드 대시보드 제작을 총괄했습니다.
+          </p>
+          <div class="tag-group">
+            <span class="tag">React</span>
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">실시간 데이터 시각화 웹 앱</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+            웹소켓 기반 대용량 로그 모니터링 툴. 렌더링 성능을 40% 개선했습니다.
+          </p>
+          <div class="tag-group">
+            <span class="tag">TypeScript</span>
+            <span class="tag">Chart.js</span>
+            <span class="tag">WebSocket</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="border-bottom: none;">
+      <h2 class="section-title">Contact</h2>
+      <div class="card" style="text-align: center; padding: 3rem 1.5rem;">
+        <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">함께 성장할 기회를 찾고 있습니다</h3>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">프로젝트 협업, 기술 문의 등 언제든 편하게 연락해 주세요.</p>
+        <a href="mailto:student@university.ac.kr" class="btn btn-primary">student@university.ac.kr</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Hong Gildong. Built with Modern Minimal Blue Style.</p>
+  </footer>
+
+</body>
+</html>
